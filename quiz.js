@@ -65,6 +65,5 @@ function resultSubmitted() {
 		}
 	} else if (cookie == 1) {
 		document.getElementById("2ndTry").style.display = "block";
-		alert("Cookie exists");
 	}
 }

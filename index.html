@@ -9,10 +9,9 @@
 </head>
 
 <body>
-
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="logo">Mein Quiz</div>
+        <div class="logo">QR-Code Quiz</div>
         <div class="menu-toggle" onclick="toggleMenu()">
             <div></div>
             <div></div>
@@ -26,8 +25,38 @@
     </nav>
 
     <!-- Quiz -->
+    <div class="intro-container">
+        <h2>Herzlich Willkommen beim QR Quiz</h2>
+        <p>Wir heißen sie recht herzlich Willkommen in unserer Ausbildungswerkstatt im Marinearsenal der Bundeswehr.<br>
+            Durch das richtige beantworten der Fragen des Quizes gibt es am Ausgang eine Belohnung für Sie.<br><br>
+            <hr><br>
+
+            <h2>Erläuterung des Quizes:</h2>
+            <b>Startpunkt:</b><br>
+            Beim Eingang oder Ausgang findet ihr einen QR-Code. Scannt diesen, um das Quiz zu starten.
+
+            QR-Codes und Bereiche:
+            Es gibt insgesamt 5 QR-Codes, die euch zu verschiedenen Bereichen der Website führen:<br>
+
+            <br>
+            <b>Eingang/Ausgang:</b> Startpunkt und Belohnung<br>
+            West 1: Für die Berufe Mechatroniker und Industriemechaniker (jeweils 2 QR-Codes)<br>
+            West 2: Für den Beruf Elektroniker für Geräte und Systeme<br>
+            Bei den IT-Systemelektronikern: Für den Beruf IT-Systemelektroniker
+            <br>
+            <br>
+            <b>Beantwortung der Fragen:</b><br>
+            An jedem QR-Code findet ihr zwei Fragen zu dem jeweiligen Beruf. Beantwortet diese sorgfältig.<br>
+
+            <br>
+            <b>Abschluss:</b><br>
+            Nach Beantwortung aller Fragen können Sie Ihre Belohnung beim Ausgang abholen.
+        </p>
+    </div>
+
+    <!-- Quiz -->
     <div class="quiz-container">
-        <h2>Beantworte die folgenden Fragen:</h2>
+        <h2>Beantworten Sie die folgenden Fragen:</h2>
 
         <!-- Platzhalter-Fragen -->
         <div class="question">
@@ -49,7 +78,61 @@
         </div>
 
         <div class="question">
-            <h3>Frage 10: Platzhalterfrage?</h3>
+            <h3>Frage 3: Platzhalterfrage?</h3>
+            <div class="answers">
+                <label><input type="radio" name="q2"> Antwort A</label>
+                <label><input type="radio" name="q2"> Antwort B</label>
+                <label><input type="radio" name="q2"> Antwort C</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>Frage 4: Platzhalterfrage?</h3>
+            <div class="answers">
+                <label><input type="radio" name="q2"> Antwort A</label>
+                <label><input type="radio" name="q2"> Antwort B</label>
+                <label><input type="radio" name="q2"> Antwort C</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>Frage 5: Platzhalterfrage?</h3>
+            <div class="answers">
+                <label><input type="radio" name="q2"> Antwort A</label>
+                <label><input type="radio" name="q2"> Antwort B</label>
+                <label><input type="radio" name="q2"> Antwort C</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>Frage 6: Platzhalterfrage?</h3>
+            <div class="answers">
+                <label><input type="radio" name="q2"> Antwort A</label>
+                <label><input type="radio" name="q2"> Antwort B</label>
+                <label><input type="radio" name="q2"> Antwort C</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>Frage 7: Platzhalterfrage?</h3>
+            <div class="answers">
+                <label><input type="radio" name="q2"> Antwort A</label>
+                <label><input type="radio" name="q2"> Antwort B</label>
+                <label><input type="radio" name="q2"> Antwort C</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>Frage 8: Platzhalterfrage?</h3>
+            <div class="answers">
+                <label><input type="radio" name="q2"> Antwort A</label>
+                <label><input type="radio" name="q2"> Antwort B</label>
+                <label><input type="radio" name="q2"> Antwort C</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>Frage 9: Platzhalterfrage?</h3>
             <div class="answers">
                 <label><input type="radio" name="q10"> Antwort A</label>
                 <label><input type="radio" name="q10"> Antwort B</label>
@@ -57,11 +140,20 @@
             </div>
         </div>
 
-        <button onclick="alert('Quiz wird ausgewertet...')">Quiz abschließen</button>
+        <div class="question">
+            <h3>Frage 10: Platzhalterfrage?</h3>
+            <div class="answers">
+                <label><input type="radio" name="q2"> Antwort A</label>
+                <label><input type="radio" name="q2"> Antwort B</label>
+                <label><input type="radio" name="q2"> Antwort C</label>
+            </div>
+        </div>
+
+        <button class="submit_button" onclick="alert('Quiz wird ausgewertet...')">Quiz abschließen</button>
     </div>
 
     <footer>
-       <p><b>Marinearsenal Wilhelmshaven</b><br>Ausbildungswerkstatt</p>
+        <p><b>Marinearsenal Wilhelmshaven</b><br>Ausbildungswerkstatt</p>
     </footer>
 
     <script>

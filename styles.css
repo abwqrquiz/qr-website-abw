@@ -1,160 +1,107 @@
-*,
-*:before,
-*:after {
-	box-sizing: border-box;
-	font-family: Arial, Helvetica, sans-serif;
+/* Grundlegendes Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
 
 body {
-	margin: 0;
-	background-image: linear-gradient(to left, rgba(125,125,255,125), rgba(51,51,51,255));
-}
-.content {
-	flex: 1;
-}
-
-#wrapper{
-    background-image:linear-gradient(rgba(255,255,255,0.7),rgba(0,0,0,0.7)), url("hero-img.jpg");
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-    text-align: center;
-	display: flex;
-	flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(to left, rgba(125, 125, 255, 125), rgba(51, 51, 51, 255));
+  color: #333;
+  line-height: 1.6;
 }
 
+/* Navigation */
 .navbar {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	background-color: #333;
-	position: -webkit-sticky;
-	position: sticky;
-	top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(to left, rgba(125, 125, 255, 125), rgba(51, 51, 51, 255));
+  padding: 1rem;
+  color: white;
+  border-color: grey;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
 }
 
-li {
-	float: left;
+.navbar .logo {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-li a {
-	display: block;
-	color: white;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
+.navbar ul {
+  display: flex;
+  list-style: none;
 }
 
-.choice {
-    padding: 3%;
+.navbar ul li {
+  margin-left: 20px;
 }
 
-.options{
-    display: inline-flex;
-    margin-left: 6%;
-	margin-right: 6%;
-    font-size: 25px;
-    font-weight: 100;
-    margin-top: 4%;
-    text-align: left;
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
 }
 
-.ans-btn{
-    padding: 2%;
+/* Hamburger Menü */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
 }
 
-.submit-answer{
-	margin-top: 50px;
-    background-color:white;
-    border: 2px solid #0384fc;
-    padding: 15px;
-    border-radius: 20px;
-    transition: background-color 0.3s,border 0.2s, color 0.2s;
+.menu-toggle div {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
 }
 
-.submit-answer:hover{
-    
-    background-color: #0384fc;
-    padding: 15px;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 20px;
+/* Quiz */
+.quiz-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.submit-answer:focus{
-    
-    background-color: #0384fc;
-    padding: 15px;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 20px;
+.question {
+  margin-bottom: 1.5rem;
 }
 
-#result{
-	visibility: hidden;
-	background-color: #ffffff90;
-	padding: 15px;
-	border: 2px solid #0384fc;
-	border-radius: 5px;
-	margin-top: 50px;
+.question h3 {
+  margin-bottom: 0.5rem;
 }
 
-#correct {
-	display: none;
+.answers label {
+  display: block;
+  margin: 0.4rem 0;
 }
 
-#false {
-	display: none;
-}
+/* Responsives Menü */
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #004080;
+  }
 
-#2ndTry {
-	display: none;
-}
+  .navbar ul.active {
+    display: flex;
+  }
 
-input[type="radio"] {
-	background-color: #fff;
-	appearance: none;
-	margin: 0;
-	margin-right: 1em;
-	font: inherit;
-	color: currentColor;
-	width: 1em;
-	height: 1em;
-	border: 0.10em solid currentColor;
-	border-radius: 50%;
-	transform: translateY(-0.075em);
-	display: grid;
-	place-content: center;
-	place-self: flex-end;
-}
-
-input[type="radio"]::before {
-	content: "";
-	width: 0.65em;
-	height: 0.65em;
-	border-radius: 50%;
-	transition: 120ms transform ease-in-out;
-	margin: 0;
-	transform: scale(0);
-}
-
-input[type="radio"]:checked::before {
-	transform: none;
-	box-shadow: inset 0px 0px 0px 1em rgb(3, 132, 252);
-}
-
-input[type="radio"]:hover {
-	box-shadow: 0px 0px 10px 0.2em rgb(95, 179, 255);
-}
-
-li a:hover {
-	background-color: #111;
+  .menu-toggle {
+    display: flex;
+  }
 }
 
 footer {
-	background-color: #777;
-	text-align: center;
-	color: white;
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
 }

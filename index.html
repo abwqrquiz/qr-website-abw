@@ -2,33 +2,74 @@
 <html lang="de">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css">
-    <title>QR Code - Quiz</title>
+    <title>Ausbildungswerkstatt - QR-Code Quiz</title>
 </head>
 
 <body>
-    <ul class="navbar">
-        <li><a href="default.asp">Home</a></li>
-        <li><a href="news.asp">News</a></li>
-        <li><a href="contact.asp">Contact</a></li>
-        <li><a href="about.asp">About</a></li>
-    </ul>
 
-    <div id="wrapper">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Mein Quiz</div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul id="nav-links">
+            <li><a href="#">Start</a></li>
+            <li><a href="#">Quiz</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <!-- Quiz -->
+    <div class="quiz-container">
+        <h2>Beantworte die folgenden Fragen:</h2>
+
+        <!-- Platzhalter-Fragen -->
+        <div class="question">
+            <h3>Frage 1: Platzhalterfrage?</h3>
+            <div class="answers">
+                <label><input type="radio" name="q1"> Antwort A</label>
+                <label><input type="radio" name="q1"> Antwort B</label>
+                <label><input type="radio" name="q1"> Antwort C</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>Frage 2: Platzhalterfrage?</h3>
+            <div class="answers">
+                <label><input type="radio" name="q2"> Antwort A</label>
+                <label><input type="radio" name="q2"> Antwort B</label>
+                <label><input type="radio" name="q2"> Antwort C</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>Frage 10: Platzhalterfrage?</h3>
+            <div class="answers">
+                <label><input type="radio" name="q10"> Antwort A</label>
+                <label><input type="radio" name="q10"> Antwort B</label>
+                <label><input type="radio" name="q10"> Antwort C</label>
+            </div>
+        </div>
+
+        <button onclick="alert('Quiz wird ausgewertet...')">Quiz abschließen</button>
     </div>
 
-    <footer class="footer_link">
-        <b>Folgt uns auf den Sozialen Medien</b>
+    <footer>
+       <p><b>Marinearsenal Wilhelmshaven</b><br>Ausbildungswerkstatt</p>
     </footer>
-    
-</body>
 
-<script>
-    function toggleMenu() {
-        document.getElementById("navbar").classList.toggle("active");
-    }
-</script>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('nav-links');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
 
 </html>

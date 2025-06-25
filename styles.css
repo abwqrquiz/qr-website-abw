@@ -10,6 +10,9 @@ body {
 	margin: 0;
 	background-image: linear-gradient(to left, rgba(125,125,255,125), rgba(51,51,51,255));
 }
+.content {
+	flex: 1;
+}
 
 #wrapper{
     background-image:linear-gradient(rgba(255,255,255,0.7),rgba(0,0,0,0.7)), url("hero-img.jpg");
@@ -17,6 +20,8 @@ body {
     background-size: cover;
     height: 100vh;
     text-align: center;
+	display: flex;
+	flex-direction: column;
 }
 
 .navbar {
@@ -89,11 +94,23 @@ li a {
 
 #result{
 	visibility: hidden;
-	background-color:white;
+	background-color: #ffffff90;
 	padding: 15px;
 	border: 2px solid #0384fc;
 	border-radius: 5px;
 	margin-top: 50px;
+}
+
+#correct {
+	display: none;
+}
+
+#false {
+	display: none;
+}
+
+#2ndTry {
+	display: none;
 }
 
 input[type="radio"] {
@@ -138,7 +155,6 @@ li a:hover {
 
 footer {
 	background-color: #777;
-	padding: 10px;
 	text-align: center;
 	color: white;
 }

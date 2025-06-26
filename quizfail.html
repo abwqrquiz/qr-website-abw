@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Ausbildungswerkstatt - QR-Code Quiz</title>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">QR-Code Quiz</div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul id="nav-links">
+            <button type="submit">
+                <img style="width: 32px; height: 32px; display: none;" src="images/night-mode.png" alt="buttonpng" border="0" />
+            </button>
+            <li><a href="https://abw-wilhelmshaven.de/">Ausbildung im Marinearsenal</a></li>
+        </ul>
+    </nav>
+
+    <!-- Quiz -->
+    <div class="intro-container">
+        <h2>Vielen Dank für's Teilnehmen am QR-Code Quiz!</h2><br>
+        <p>Leider haben Sie eine Frage falsch beantwortet und können am Quiz nicht erneut teilnehmen.</p><br>
+        <p>Die Mitarbeiter der Bundeswehr stehen Ihnen jederzeit für Fragen zur verfügung. Weiterhin viel Spaß im
+            Marinearsenal der Bundeswehr.</p>
+        <br>
+        <button style="border-radius: 0px; background-color: white; border: 0px; padding: 10px;"
+            onclick="window.location.href='index.html'">Zurück zur Starseite</button>
+    </div>
+
+    <footer>
+        <p><b>Marinearsenal Wilhelmshaven</b><br>Ausbildungswerkstatt</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('nav-links');
+            menu.classList.toggle('active');
+        }
+    </script>
+    <script src="index.js"></script>
+</body>
+
+</html>

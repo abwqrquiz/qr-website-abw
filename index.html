@@ -18,12 +18,14 @@
             <div></div>
         </div>
         <ul id="nav-links">
-            <li><a href="https://abw-wilhelmshaven.de/">Ausbildung im Marinearsenal</a></li>
+            <li><a href="https://abw-wilhelmshaven.de/">Ausbildung im Arsenal</a></li>
+            <hr>
+            <li><a href="https://abw-wilhelmshaven.de/"></a></li>
         </ul>
     </nav>
 
     <!-- Quiz -->
-    <div class="failed-container" style="background-color: rgb(158, 45, 45);">
+    <div class="failed-container">
         <h2>Quiz fehlgeschlagen</h2>
     </div>
 
@@ -58,31 +60,17 @@
 
     <!-- Quiz -->
     <div class="quiz-container">
-        <h2>Beantworten Sie die folgenden Fragen:</h2>
-
-        <!-- Platzhalter-Fragen -->
-        <div class="question">
-            <h3>Frage 1: Platzhalterfrage?</h3>
-            <div class="answers">
-                <button class="quizbuttons" onclick="answerQuestion(1, true)">Antwort A</button><br>
-                <button class="quizbuttons" onclick="answerQuestion(1, false)">Antwort B</button><br>
-                <button class="quizbuttons" onclick="answerQuestion(1, false)">Antwort C</button>
-            </div>
-        </div>
-
-        <div class="question">
-            <h3>Frage 2: Platzhalterfrage?</h3>
-            <div class="answers">
-                <button class="quizbuttons" onclick="answerQuestion(1, true)">Antwort A</button><br>
-                <button class="quizbuttons" onclick="answerQuestion(1, false)">Antwort B</button><br>
-                <button class="quizbuttons" onclick="answerQuestion(1, false)">Antwort C</button>
-            </div>
-        </div>
         <button class="reset_button" onclick="localStorage.clear()">localstorage.clear</button>
+        <a href="itel.html">itel</a>
+        <a href="egs.html">egs</a>
+        <a href="eis.html">eis</a>
+        <a href="metro.html">metro</a>
+        <a href="im.html">im</a>
     </div>
 
     <div class="quiz-container" style="background-color: rgb(85, 124, 40);">
-        <p style="text-align: center;">Scannen Sie die anderen QR-Codes um das Quiz weiterzuführen. Durch das richtige beantworten der Fragen erhalten Sie beim Ausgang eine Belohnung nach Wahl.</p>
+        <p style="text-align: center;">Scannen Sie die anderen QR-Codes im Haus um das Quiz weiterzuführen.
+            Nach Beendigung des Quizes, dürfen Sie sich eine Belohnung beim Ausgang abholen.</p>
     </div>
 
     <footer>
@@ -95,6 +83,7 @@
             menu.classList.toggle('active');
         }
     </script>
+    
     <script src="index.js"></script>
 </body>
 

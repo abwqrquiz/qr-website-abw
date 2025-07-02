@@ -26,51 +26,101 @@ body {
   background-attachment: fixed;
 }
 
-/* Navigation */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  background-color: #333;
+  flex-wrap: wrap;
   align-items: center;
-  background: rgb(36, 36, 36);
-  padding: 1rem;
+  padding: 0 10px;
+}
+
+.logo {
   color: white;
-  border-color: rgb(255, 255, 255);
-  border-style: solid;
-  border-width: 0px 0px 1px 0px;
-  box-shadow: 0 6px 6px 0 rgba(0,0,0,.2);
-}
-
-.navbar .logo {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.navbar ul {
-  display: flex;
-  list-style: none;
-}
-
-.navbar ul li {
-  margin-left: 20px;
-}
-
-.navbar ul li a {
-  color: white;
+  font-size: 1.5em;
+  padding: 14px 20px;
   text-decoration: none;
 }
 
-/* Hamburger Menü */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
+/* Menü-Container */
+.nav-links {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
 }
 
-.menu-toggle div {
-  width: 25px;
-  height: 3px;
-  background: white;
-  margin: 4px 0;
+/* Einzelne Links */
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  display: block;
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Dropdown-Inhalt verstecken */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #444;
+  min-width: 160px;
+  z-index: 1;
+}
+
+/* Dropdown-Links */
+.dropdown a {
+  padding: 12px 16px;
+  display: block;
+  color: white;
+}
+
+/* Zeige Dropdown bei Hover (Desktop) */
+.nav-item:hover .dropdown {
+  display: block;
+}
+
+/* Für mobile Geräte: Menü-Button */
+.menu-toggle {
+  display: none;
+  font-size: 1.5em;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 14px 20px;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Menü-Button sichtbar machen */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Zeige Menü bei aktivem Zustand */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Dropdown im mobilen Menü */
+  .dropdown {
+    position: static;
+  }
+
+  /* Dropdown bei Klick öffnen (JavaScript) */
+  .nav-item.open .dropdown {
+    display: block;
+  }
 }
 
 /* Quiz */
@@ -80,7 +130,7 @@ body {
   padding: 2rem;
   background: rgb(36, 36, 36);
   border-radius: 0px;
-  box-shadow: 0px 8px 8px 0 rgba(0,0,0,.2);
+  box-shadow: 0px 8px 8px 0 rgba(0, 0, 0, .2);
 }
 
 .intro-container {
@@ -89,7 +139,7 @@ body {
   padding: 2rem;
   background: rgb(36, 36, 36);
   border-radius: 0px;
-  box-shadow: 0px 8px 8px 0 rgba(0,0,0,.2);
+  box-shadow: 0px 8px 8px 0 rgba(0, 0, 0, .2);
 }
 
 .failed-container {
@@ -98,7 +148,7 @@ body {
   padding: 2rem;
   background: rgb(36, 36, 36);
   border-radius: 0px;
-  box-shadow: 0px 8px 8px 0 rgba(0,0,0,.2);
+  box-shadow: 0px 8px 8px 0 rgba(0, 0, 0, .2);
   display: none;
 }
 

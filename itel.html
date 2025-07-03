@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css">
     <title>Ausbildungswerkstatt - QR-Code Quiz</title>
+    <script src="index.js"></script>
 </head>
 
 <body>
@@ -16,9 +17,6 @@
             <div class="nav-item">
                 <a href="index.html" class="nav-link">Startseite</a>
             </div>
-            <div class="nav-item">
-                <a href="index.html" class="nav-link">Infos: Wochenende an der Jade</a>
-            </div>
             <div class="nav-item" id="services">
                 <a href="#" class="nav-link">Ausbildung im Marinearsenal</a>
                 <div class="dropdown">
@@ -28,11 +26,6 @@
             </div>
         </div>
     </nav>
-
-    <!-- Quiz -->
-    <div class="failed-container" style="background-color: rgb(158, 45, 45);">
-        <h2>Quiz fehlgeschlagen</h2>
-    </div>
 
     <div class="intro-container">
         <h2>Herzlich Willkommen beim QR-Code Quiz</h2>
@@ -79,7 +72,8 @@
         <div class="question">
             <h3>Frage 1: Was ist das "Herzstück" eines PCs?</h3>
             <div class="answers">
-                <button class="quizbuttons" onclick="answerQuestion(1, true)">Prozessor</button><br>
+                <button class="quizbuttons"
+                    onclick="answerQuestion(1, true); this.style.backgroundColor='green'; this.style.color='white';">Prozessor</button><br>
                 <button class="quizbuttons" onclick="answerQuestion(2, false)">Speicherlaufwerk</button><br>
                 <button class="quizbuttons" onclick="answerQuestion(3, false)">Grafikkarte</button>
             </div>
@@ -89,11 +83,11 @@
             <h3>Frage 2: Für was steht das "IT" im Beruf IT-Systemelektroniker</h3>
             <div class="answers">
                 <button class="quizbuttons" onclick="answerQuestion(4, false)">Infrarottechnik</button><br>
-                <button class="quizbuttons" onclick="answerQuestion(5, true)">Informationstechnik</button><br>
+                <button class="quizbuttons"
+                    onclick="answerQuestion(5, true); this.style.backgroundColor='green'; this.style.color='white';">Informationstechnik</button><br>
                 <button class="quizbuttons" onclick="answerQuestion(6, false)">Internet und Telefon</button>
             </div>
         </div>
-        <button class="reset_button" onclick="localStorage.clear()">localstorage.clear</button>
     </div>
 
     <div class="quiz-container" style="background-color: rgb(85, 124, 40);">
@@ -104,28 +98,6 @@
     <footer>
         <p><b>Marinearsenal Wilhelmshaven</b><br>Ausbildungswerkstatt</p>
     </footer>
-
-    <script>
-        // Menü-Button für mobile Geräte
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Dropdown per Klick auf Mobilgeräten
-        document.querySelectorAll('.has-dropdown > .nav-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    const dropdown = link.nextElementSibling;
-                    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-                }
-            });
-        });
-    </script>
-    <script src="index.js"></script>
 </body>
 
 </html>

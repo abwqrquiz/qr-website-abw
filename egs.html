@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css">
     <title>Ausbildungswerkstatt - QR-Code Quiz</title>
+    <script src="index.js"></script>
 </head>
 
 <body>
@@ -28,11 +29,6 @@
             </div>
         </div>
     </nav>
-
-    <!-- Quiz -->
-    <div id="failed-container" style="background-color: rgb(158, 45, 45);">
-        <h2>Quiz fehlgeschlagen</h2>
-    </div>
 
     <div class="intro-container">
         <h2>Herzlich Willkommen beim QR-Code Quiz</h2>
@@ -82,7 +78,9 @@
                     legen</button><br>
                 <button class="quizbuttons" onclick="answerQuestion(26, false)">Finger gegen den Uhrzeigersinn
                     bewegen</button><br>
-                <button class="quizbuttons" onclick="answerQuestion(27, true)">Finger im Uhrzeigersinn bewegen</button>
+                <button class="quizbuttons"
+                    onclick="answerQuestion(27, true); this.style.backgroundColor='green'; this.style.color='white';">Finger
+                    im Uhrzeigersinn bewegen</button>
             </div>
         </div>
 
@@ -91,12 +89,13 @@
             <div class="answers">
                 <button class="quizbuttons" onclick="answerQuestion(28, false)">FBD (Function Block
                     Diagram)</button><br>
-                <button class="quizbuttons" onclick="answerQuestion(29, true)">SPS (Speicherprogrammierbare
+                <button class="quizbuttons"
+                    onclick="answerQuestion(29, true); this.style.backgroundColor='green'; this.style.color='white';">SPS
+                    (Speicherprogrammierbare
                     Steuerung)</button><br>
                 <button class="quizbuttons" onclick="answerQuestion(30, false)">JavaScript</button>
             </div>
         </div>
-        <button class="reset_button" onclick="localStorage.clear()">localstorage.clear</button>
     </div>
 
     <div class="quiz-container" style="background-color: rgb(85, 124, 40);">
@@ -107,28 +106,6 @@
     <footer>
         <p><b>Marinearsenal Wilhelmshaven</b><br>Ausbildungswerkstatt</p>
     </footer>
-
-    <script>
-        // Menü-Button für mobile Geräte
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Dropdown per Klick auf Mobilgeräten
-        document.querySelectorAll('.has-dropdown > .nav-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    const dropdown = link.nextElementSibling;
-                    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-                }
-            });
-        });
-    </script>
-    <script src="index.js"></script>
 </body>
 
 </html>

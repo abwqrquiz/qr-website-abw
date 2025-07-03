@@ -1,30 +1,37 @@
-function answerQuestion(questionNumber, isCorrect) {
-    if (localStorage.getItem('quizFailed') === 'true') {
-        /*         document.addEventListener('DOMContentLoaded', function () {
-                    document.getElementById('failed-container').style.display = 'block';
-                }); */
+function answerQuestion(questionId, isCorrect) {
+    localStorage.setItem('question_' + questionId, isCorrect);
 
-        document.getElementsById('quiz-container').style.display = 'none';
-    }
+    let correctCount = localStorage.getItem('correctAnswersCount') || 0;
+    correctCount = parseInt(correctCount);
 
     if (isCorrect) {
-        alert('Richtig!');
-        document.getElementById('quizbuttons').style.property = backgroundColor = 'green';
-        document.getElementById('message').innerText = 'Richtig!';
-    } else {
+        correctCount += 1;
+        localStorage.setItem('correctAnswersCount', correctCount);
+        console.log('Aktuelle richtige Antworten:', correctCount);
+    }
+
+    if (correctCount >= 10) {
+        alert('Herzlichen Glückwunsch! Du hast alle 10 Fragen richtig beantwortet.');
+        // window.location.href = 'gewinnerseite.html';
+    }
+
+    if (!isCorrect) {
         window.location.replace("quizfail.html");
         localStorage.setItem('quizFailed', 'true');
-
         document.getElementById('failed-container').style.display = 'block';
-        // document.getElementById('message').innerText = 'Sie haben das Quiz bereits falsch beantwortet. Leider können Sie es nicht erneut versuchen.';
     }
 }
 
-if (localStorage.getItem('quizFailed') === 'true') {
-    document.getElementById('quiz-container').style.display = 'none';
-    document.getElementById('message').innerText = 'Sie haben das Quiz bereits falsch beantwortet. Leider können Sie es nicht erneut versuchen.';
-}
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
 
-function saveAnswer() {
-    
-}
+// Dropdown per Klick auf Mobilgeräten
+document.querySelectorAll('.has-dropdown > .nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const dropdown = link.nextElementSibling;
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+    });
+});

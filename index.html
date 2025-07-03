@@ -17,9 +17,6 @@
             <div class="nav-item">
                 <a href="index.html" class="nav-link">Startseite</a>
             </div>
-            <div class="nav-item">
-                <a href="index.html" class="nav-link">Infos: Wochenende an der Jade</a>
-            </div>
             <div class="nav-item" id="services">
                 <a href="#" class="nav-link">Ausbildung im Marinearsenal</a>
                 <div class="dropdown">
@@ -29,11 +26,6 @@
             </div>
         </div>
     </nav>
-
-    <!-- Quiz -->
-    <div class="failed-container">
-        <h2>Quiz fehlgeschlagen</h2>
-    </div>
 
     <!-- Begrüßung und Erklärung des Quizzes -->
     <div class="intro-container">
@@ -91,29 +83,8 @@
     </div>
 
     <footer>
-        <p><b>Marinearsenal Wilhelmshaven</b><br>Ausbildungswerkstatt</p>
+        <p><b>Marinearsenal Wilhelmshaven</b> - Ausbildungswerkstatt</p><a href="impressum.html">Impressum</a>
     </footer>
-
-    <script>
-        // Menü-Button für mobile Geräte
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Dropdown per Klick auf Mobilgeräten
-        document.querySelectorAll('.has-dropdown > .nav-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    const dropdown = link.nextElementSibling;
-                    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>

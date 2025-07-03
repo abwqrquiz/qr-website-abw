@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css">
     <title>Ausbildungswerkstatt - QR-Code Quiz</title>
+    <script src="index.js"></script>
 </head>
 
 <body>
@@ -28,11 +29,6 @@
             </div>
         </div>
     </nav>
-
-    <!-- Quiz -->
-    <div class="failed-container" style="background-color: rgb(158, 45, 45);">
-        <h2>Quiz fehlgeschlagen</h2>
-    </div>
 
     <div class="intro-container">
         <h2>Herzlich Willkommen beim QR-Code Quiz</h2>
@@ -78,21 +74,25 @@
         <div class="question">
             <h3>Frage 1: In welchem Temperaturbereich sollte ein Lötkolben eingestellt sein?</h3>
             <div class="answers">
-                <button class="quizbuttons" onclick="answerQuestion(19, true)">200°C - 450°C</button><br>
+                <button class="quizbuttons"
+                    onclick="answerQuestion(19, true); this.style.backgroundColor='green'; this.style.color='white';">200°C
+                    - 450°C</button><br>
                 <button class="quizbuttons" onclick="answerQuestion(20, false)">100°C - 250°C</button><br>
                 <button class="quizbuttons" onclick="answerQuestion(21, false)">300°C - 400°C</button>
             </div>
         </div>
 
         <div class="question">
-            <h3>Frage 2: Welche Basis eignet sich für Kleinstcomputer Anwendungen wie bei dem Arcade Automaten oder der Bienenwaage?</h3>
+            <h3>Frage 2: Welche Basis eignet sich für Kleinstcomputer Anwendungen wie bei dem Arcade Automaten oder der
+                Bienenwaage?</h3>
             <div class="answers">
                 <button class="quizbuttons" onclick="answerQuestion(22, false)">Arduino</button><br>
                 <button class="quizbuttons" onclick="answerQuestion(23, false)">PlayStation 4</button><br>
-                <button class="quizbuttons" onclick="answerQuestion(24, true)">Raspberry PI</button>
+                <button class="quizbuttons"
+                    onclick="answerQuestion(24, true); this.style.backgroundColor='green'; this.style.color='white';">Raspberry
+                    PI</button>
             </div>
         </div>
-        <button class="reset_button" onclick="localStorage.clear()">localstorage.clear</button>
     </div>
 
     <div class="quiz-container" style="background-color: rgb(85, 124, 40);">
@@ -103,28 +103,6 @@
     <footer>
         <p><b>Marinearsenal Wilhelmshaven</b><br>Ausbildungswerkstatt</p>
     </footer>
-
-    <script>
-        // Menü-Button für mobile Geräte
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Dropdown per Klick auf Mobilgeräten
-        document.querySelectorAll('.has-dropdown > .nav-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    const dropdown = link.nextElementSibling;
-                    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-                }
-            });
-        });
-    </script>
-    <script src="index.js"></script>
 </body>
 
 </html>

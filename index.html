@@ -6,22 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css">
     <title>Ausbildungswerkstatt - QR-Code Quiz</title>
+    <script src="index.js"></script>
 </head>
 
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
-        <div class="logo">QR-Code Quiz</div>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
+        <a href="#" class="logo">QR-Code Quiz</a>
+        <button class="menu-toggle" aria-label="Menü öffnen" id="menu-toggle">&#9776;</button>
+        <div class="nav-links" id="nav-links">
+            <div class="nav-item">
+                <a href="index.html" class="nav-link">Startseite</a>
+            </div>
+            <div class="nav-item">
+                <a href="index.html" class="nav-link">Infos: Wochenende an der Jade</a>
+            </div>
+            <div class="nav-item" id="services">
+                <a href="#" class="nav-link">Ausbildung im Marinearsenal</a>
+                <div class="dropdown">
+                    <a href="https://www.bundeswehrkarriere.de/entdecker/jobs/ausbildung">Bundeswehrkarriere</a>
+                    <a href="https://abw-wilhelmshaven.de/">Ausbildungswerkstatt</a>
+                </div>
+            </div>
         </div>
-        <ul id="nav-links">
-            <li><a href="https://abw-wilhelmshaven.de/">Ausbildung im Arsenal</a></li>
-            <hr>
-            <li><a href="https://abw-wilhelmshaven.de/"></a></li>
-        </ul>
     </nav>
 
     <!-- Quiz -->
@@ -29,32 +35,43 @@
         <h2>Quiz fehlgeschlagen</h2>
     </div>
 
+    <!-- Begrüßung und Erklärung des Quizzes -->
     <div class="intro-container">
         <h2>Herzlich Willkommen beim QR-Code Quiz</h2>
-        <p>Wir heißen sie recht herzlich Willkommen in unserer Ausbildungswerkstatt im Marinearsenal der Bundeswehr.<br>
-            Durch das richtige beantworten der Fragen des Quizes gibt es am Ausgang eine Belohnung für Sie.<br><br>
+        <p>Wir heißen Sie recht herzlich Willkommen in unserer Ausbildungswerkstatt im Marinearsenal der
+            Bundeswehr.<br><br>
+            Durch das richtige beantworten der Fragen des Quizzes gibt es am Eingang/Ausgang der Ausbildungswerkstatt
+            eine Belohnung für Sie.<br><br>
             <hr><br>
 
-        <h2>Erläuterung des Quizes:</h2>
+        <h2>Erläuterung des Quizzes:</h2>
         <b>Startpunkt:</b><br>
-        Beim Eingang oder Ausgang findet ihr einen QR-Code. Scannt diesen, um das Quiz zu starten.
+        Beim Eingang/Ausgang der Ausbildungswerkstatt finden Sie einen QR-Code. Scannen Sie diesen ein, um das Quiz zu
+        starten.
 
         QR-Codes und Bereiche:
-        Es gibt insgesamt 5 QR-Codes, die euch zu verschiedenen Bereichen der Website führen:<br>
+        Es gibt insgesamt 6 QR-Codes, die Sie zu verschiedenen Bereichen der Website führen:<br>
 
         <br>
         <b>Eingang/Ausgang:</b> Startpunkt und Belohnung<br>
-        West 1: Für die Berufe Mechatroniker und Industriemechaniker (jeweils 2 QR-Codes)<br>
-        West 2: Für den Beruf Elektroniker für Geräte und Systeme<br>
-        Bei den IT-Systemelektronikern: Für den Beruf IT-Systemelektroniker
+        <b>West 1:</b> Für den Beruf "Industriemechaniker"<br>
+        <b>Süd 2:</b> Für den Beruf "Mechatroniker"<br>
+        <b>West 2:</b> Für den Beruf "Elektroniker für Geräte & Systeme"<br>
+        <b>Süd 3:</b> Für den Beruf "Elektroniker für Informations- & Systemtechnik"<br>
+        <b>Süd 4:</b> Für den Beruf "IT-Systemelektroniker"
         <br>
         <br>
         <b>Beantwortung der Fragen:</b><br>
-        An jedem QR-Code findet ihr zwei Fragen zu dem jeweiligen Beruf. Beantwortet diese sorgfältig.<br>
+        Für jeden QR-Code gibt es zwei Fragen für den jeweiligen Beruf. Beantworten Sie diese sorgfältig.<br>
 
         <br>
         <b>Abschluss:</b><br>
         Nach Beantwortung aller Fragen können Sie Ihre Belohnung beim Ausgang abholen.
+        <br>
+        <br>
+        <b>Sonstiges:</b><br>
+        - Bei einem Fehler, sind Sie direkt ausgeschlossen.<br>
+        - Das Quiz sollte nur am Smartphone gemacht werden (Screenshots vom Gewinn, gelten NICHT)
         </p>
     </div>
 
@@ -70,7 +87,7 @@
 
     <div class="quiz-container" style="background-color: rgb(85, 124, 40);">
         <p style="text-align: center;">Scannen Sie die anderen QR-Codes im Haus um das Quiz weiterzuführen.
-            Nach Beendigung des Quizes, dürfen Sie sich eine Belohnung beim Ausgang abholen.</p>
+            Nach Beendigung des Quizzes, dürfen Sie sich eine Belohnung beim Ausgang abholen.</p>
     </div>
 
     <footer>
@@ -78,13 +95,25 @@
     </footer>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('nav-links');
-            menu.classList.toggle('active');
-        }
+        // Menü-Button für mobile Geräte
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Dropdown per Klick auf Mobilgeräten
+        document.querySelectorAll('.has-dropdown > .nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const dropdown = link.nextElementSibling;
+                    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+                }
+            });
+        });
     </script>
-    
-    <script src="index.js"></script>
 </body>
 
 </html>

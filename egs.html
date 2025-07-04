@@ -5,30 +5,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Ausbildungswerkstatt - QR-Code Quiz</title>
     <script src="index.js"></script>
 </head>
 
 <body>
-    <nav class="navbar">
-        <a href="#" class="logo">QR-Code Quiz</a>
-        <button class="menu-toggle" aria-label="Menü öffnen" id="menu-toggle">&#9776;</button>
-        <div class="nav-links" id="nav-links">
-            <div class="nav-item">
-                <a href="index.html" class="nav-link">Startseite</a>
-            </div>
-            <div class="nav-item">
-                <a href="index.html" class="nav-link">Infos: Wochenende an der Jade</a>
-            </div>
-            <div class="nav-item" id="services">
-                <a href="#" class="nav-link">Ausbildung im Marinearsenal</a>
-                <div class="dropdown">
-                    <a href="https://www.bundeswehrkarriere.de/entdecker/jobs/ausbildung">Bundeswehrkarriere</a>
-                    <a href="https://abw-wilhelmshaven.de/">Ausbildungswerkstatt</a>
-                </div>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">QR-Code Quiz</a>
+        <div class="dropdown">
+            <button class="dropbtn">Ausbildung im Marinearsenal
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="https://abw-wilhelmshaven.de/">Ausbildungswerkstatt Wilhelmshaven</a>
+                <a href="https://bewerbung.bundeswehr-karriere.de/erece/portal/index.html">Bewerbungsportal</a>
+                <a href="https://www.bundeswehrkarriere.de/dialog/digitales-karrierecenter/assessment-trainer">Bundeswehr
+                    Assesssment Trainer</a>
             </div>
         </div>
-    </nav>
+        <a href="impressum.html">Impressum</a>
+        <a href="javascript:void(0);" class="icon" onclick="navbar()">&#9776;</a>
+    </div>
+
+    <div id="quiz-locked-hint" class="locked-hint-container" style="display:none;">
+        <b>Sie haben das Quiz bereits falsch beantwortet und sind leider ausgeschlossen.</b>
+    </div>
 
     <div class="intro-container">
         <h2>Herzlich Willkommen beim QR-Code Quiz</h2>
@@ -74,12 +76,12 @@
         <div class="question">
             <h3>Frage 1: Mit welcher Geste regelt man die Lautstärke der Musikbox nach unten?</h3>
             <div class="answers">
-                <button class="quizbuttons" onclick="answerQuestion(25, false)">Die Handfläche auf den Sensor
+                <button class="quizbuttons" onclick="answerQuestion(25, false, this)">Die Handfläche auf den Sensor
                     legen</button><br>
-                <button class="quizbuttons" onclick="answerQuestion(26, false)">Finger gegen den Uhrzeigersinn
+                <button class="quizbuttons" onclick="answerQuestion(26, false, this)">Finger gegen den Uhrzeigersinn
                     bewegen</button><br>
                 <button class="quizbuttons"
-                    onclick="answerQuestion(27, true); this.style.backgroundColor='green'; this.style.color='white';">Finger
+                    onclick="answerQuestion(27, true, this); this.style.backgroundColor='green'; this.style.color='white';">Finger
                     im Uhrzeigersinn bewegen</button>
             </div>
         </div>
@@ -87,18 +89,18 @@
         <div class="question">
             <h3>Frage 2: Wie heißt die Sprache, womit die Sortiermaschine gesteuert wird?</h3>
             <div class="answers">
-                <button class="quizbuttons" onclick="answerQuestion(28, false)">FBD (Function Block
+                <button class="quizbuttons" onclick="answerQuestion(28, false, this)">FBD (Function Block
                     Diagram)</button><br>
                 <button class="quizbuttons"
-                    onclick="answerQuestion(29, true); this.style.backgroundColor='green'; this.style.color='white';">SPS
+                    onclick="answerQuestion(29, true, this); this.style.backgroundColor='green'; this.style.color='white';">SPS
                     (Speicherprogrammierbare
                     Steuerung)</button><br>
-                <button class="quizbuttons" onclick="answerQuestion(30, false)">JavaScript</button>
+                <button class="quizbuttons" onclick="answerQuestion(30, false, this)">JavaScript</button>
             </div>
         </div>
     </div>
 
-    <div class="quiz-container" style="background-color: rgb(85, 124, 40);">
+    <div class="quiz-scan-container" id="quiz-scan-note">
         <p style="text-align: center;">Scannen Sie auch die anderen QR-Codes im Haus um das Quiz weiterzuführen.
             Nach Beendigung des Quizzes, dürfen Sie sich eine Belohnung beim Ausgang abholen.</p>
     </div>
